@@ -1,0 +1,18 @@
+﻿@model BlogSpotMvc.Models.MvcAdmin
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Admin Login Page</h1>
+@using (Html.BeginForm("Index", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.EmailId)
+    @Html.TextBoxFor(model => model.EmailId)
+    <br />
+    <br />
+    @Html.LabelFor(model => model.Password)
+    @Html.PasswordFor(model => model.Password)
+    <br />
+    <input type="submit" value="Login"   />
+}

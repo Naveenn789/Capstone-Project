@@ -1,0 +1,23 @@
+﻿@model IEnumerable<BlogSpotMvc.Models.MvcBlog>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">ASP.NET By :  @Html.DisplayFor(modelItem => item.EmpEmailId)</h5>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.DateOfCreation)</p>
+                <br>
+                <p>@Html.DisplayFor(modelItem => item.Subject)</p>
+                <a href="@Html.DisplayFor(modelItem => item.BlogUrl)" class="btn btn-primary">Visit</a>
+            </div>
+        </div>
+    </div>
+
+}
